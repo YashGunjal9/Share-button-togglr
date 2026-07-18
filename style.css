@@ -1,0 +1,155 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+body{
+    background:black;
+    color:white;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+/* HERO SECTION */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* LOGO TOP CENTER */
+.logo-box{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+}
+
+.logo-box img{
+    width:80px;
+    display:block;
+    margin:auto;
+}
+
+.brand-name{
+    margin-top:8px;
+    font-size:26px;
+    font-weight:600;
+    color:white;
+}
+
+/* CENTER TEXT */
+.center-box{
+    position:absolute;
+    top:38%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align:center;
+}
+
+/* MENU CONTAINER */
+.menu{
+    position:fixed;
+    bottom:100px;
+    left:50%;
+    transform:translateX(-50%);
+    width:200px;
+    height:200px;
+}
+
+/* TOGGLE BUTTON */
+.toggle{
+    position:absolute;
+    width:60px;
+    height:60px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    cursor:pointer;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:10;
+}
+
+.toggle i{
+    color:black;
+}
+
+/* UL RESET */
+.menu ul{
+    position:relative;
+    width:100%;
+    height:100%;
+    list-style:none;
+}
+
+/* ICON POSITION */
+.menu ul li{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    transition:0.5s;
+}
+
+/* OPEN ANIMATION */
+.menu.active ul li{
+    transform:
+        translate(-50%, -50%)
+        rotate(calc(360deg / 6 * var(--i)))
+        translate(110px)
+        rotate(calc(-360deg / 6 * var(--i)));
+}
+
+/* ICON STYLE */
+.menu ul li a{
+    width:50px;
+    height:50px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* ICON COLORS (Corrected nth-child index starts from 1) */
+.menu ul li:nth-child(1) a i{ color:#00bfff;}  /* Facebook */
+.menu ul li:nth-child(2) a i{ color:#000;}     /* X */
+.menu ul li:nth-child(3) a i{ color:#00bfff;}  /* LinkedIn */
+.menu ul li:nth-child(4) a i{ color:#e4405f;}  /* Instagram */
+.menu ul li:nth-child(5) a i{ color:red;}      /* YouTube */
+.menu ul li:nth-child(6) a i{ color:#333;}     /* GitHub */
+
+/* TYPEWRITER ANIMATION */
+.typing-text{
+    font-size:38px;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right:3px solid white;
+    width:0;
+    animation:typing 4s steps(35,end) forwards,
+              blink .8s infinite;
+}
+
+@keyframes typing{
+    from{ width:0 }
+    to{ width:100% }
+}
+
+@keyframes blink{
+    50%{ border-color:transparent }
+}
